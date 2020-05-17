@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Corona Tracker </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  
+  </head>
+
+  <body>
+  
+ 
+  
+  <div class="container-xl">
+  <h1 class="badge badge-primary text-wrap" style="width: 69rem;">Corona World Tracker</h1>
+   <div class="jumbotron">
+     <h2 class="lead">Total Cases reported</h2>
+ 	 <h3 class="display-4"th:text="${totalReportedCases}"></h3>
+
+    <hr class="my-4">
+    <p>
+    <span class="text-monospace"> 	New cases reported since previous day
+    </span>
+    <span th:text="${totalNewCases}"></span>
+    </p>
+</div>
+    
+    
+    
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+      <tr>
+      
+       <th>Country</th>
+        <th>State</th>
+        <th>Total Cases Reported</th>
+        <th>Changes Since Last Day</th>
+        </thread>
+          
+      </tr>
+       <thead class="thead-light">
+      <tr th:each="locationStat : ${locationStats}">
+       <td th:text="${locationStat.country}">2.41</td>
+        <td th:text="${locationStat.state}">Onions</td> 
+        <td th:text="${locationStat.cases}">0</td>
+        <td th:text="${locationStat.newCases}">0</td>
+        
+      </tr>
+       </thread>
+    </table>
+    
+    </div>
+  
+  </body>
+
+</html>
